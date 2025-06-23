@@ -1,0 +1,36 @@
+<div class="form-container">
+  <mat-card class="user-form-card">
+    <h2 class="form-title">Create New User</h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role" required>
+          <mat-option value="Admin">Admin</mat-option>
+          <mat-option value="ProjectManager">Project Manager</mat-option>
+          <mat-option value="Developer">Developer</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" required />
+      </mat-form-field>
+
+      <div class="form-actions">
+        <button mat-flat-button color="primary" type="submit">Create User</button>
+        <button mat-button color="warn" routerLink="/users" type="button">Cancel</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

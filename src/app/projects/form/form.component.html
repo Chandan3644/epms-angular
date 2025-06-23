@@ -1,0 +1,48 @@
+<mat-card class="form-card">
+  <mat-card-title>{{ projectId ? 'Edit Project' : 'Create Project' }}</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="projectForm" (ngSubmit)="submit()" class="project-form">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Project Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="Active">Active</mat-option>
+          <mat-option value="Completed">Completed</mat-option>
+          <mat-option value="On Hold">On Hold</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <!-- Start Date -->
+      <mat-form-field appearance="fill">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="startPicker" formControlName="startDate" />
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- End Date -->
+      <mat-form-field appearance="fill">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="endPicker" formControlName="endDate" />
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+      </mat-form-field>
+
+
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="projectForm.invalid">Save</button>
+
+    </form>
+  </mat-card-content>
+</mat-card>

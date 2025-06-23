@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin User",
+      "email": "admin@epms.com",
+      "role": "Admin",
+      "password": "admin123"
+    },
+    {
+      "id": "2",
+      "name": "Project Manager",
+      "email": "pm@epms.com",
+      "role": "ProjectManager",
+      "password": "pm123"
+    },
+    {
+      "id": "3",
+      "name": "Developer",
+      "email": "dev@epms.com",
+      "role": "Developer",
+      "password": "dev123"
+    },
+    {
+      "name": "ad11",
+      "email": "ad@gmail.com",
+      "role": "Admin",
+      "password": "11111",
+      "id": "1817"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "EPMS Dashboard",
+      "description": "Build the admin dashboard with role-based control",
+      "status": "Active",
+      "managerId": 2
+    },
+    {
+      "id": "c1f6",
+      "name": "a",
+      "description": "a",
+      "status": "Active",
+      "startDate": "2025-06-03T18:30:00.000Z",
+      "endDate": "2025-06-17T18:30:00.000Z",
+      "assignedUsers": []
+    },
+    {
+      "id": "16f8",
+      "name": "aa",
+      "description": "aa",
+      "status": "Active",
+      "startDate": "2025-06-19T18:30:00.000Z",
+      "endDate": "2025-06-27T18:30:00.000Z",
+      "assignedUsers": []
+    },
+    {
+      "id": "1b16",
+      "name": "aaaa",
+      "description": "aa",
+      "status": "Active",
+      "startDate": "2025-06-12T18:30:00.000Z",
+      "endDate": "2025-06-17T18:30:00.000Z",
+      "assignedUsers": []
+    }
+  ],
+ "tasks": [
+  {
+    "id": 1,
+    "title": "Set up login system",
+    "description": "Implement role-based authentication and guards",
+    "status": "Done",
+    "assigneeId": 3,
+    "projectId": 1,
+    "dueDate": "2025-06-10T00:00:00.000Z",
+    "priority": "High"
+  },
+  {
+    "id": 2,
+    "title": "Create dashboard UI",
+    "description": "Design and develop the dashboard components",
+    "status": "In Progress",
+    "assigneeId": 3,
+    "projectId": 1,
+    "dueDate": "2025-06-25T00:00:00.000Z",
+    "priority": "Medium"
+  },
+  {
+    "id": 3,
+    "title": "Fix overdue task issue",
+    "description": "Resolve date calculation bug in task view",
+    "status": "To Do",
+    "assigneeId": 3,
+    "projectId": 1,
+    "dueDate": "2025-07-01T00:00:00.000Z",
+    "priority": "Low"
+  },
+  {
+    "id": 4,
+    "title": "New feature planning",
+    "description": "Plan sprint backlog",
+    "status": "To Do",
+    "assigneeId": 2,
+    "projectId": 2,
+    "dueDate": "2025-06-30T00:00:00.000Z",
+    "priority": "Medium"
+  }
+]
+
+}

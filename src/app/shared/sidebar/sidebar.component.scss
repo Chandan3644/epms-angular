@@ -1,0 +1,68 @@
+/* Sidebar Styles */
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #1a237e; // Dark Indigo
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+
+  a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+
+    &:hover,
+    &.active {
+      background: #3949ab;
+    }
+  }
+}
+
+/* Sidebar Toggle Button (Mobile Only) */
+.sidebar-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1100;
+  background: #1a237e;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+/* Mobile Responsive Sidebar (Hidden by default) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    transform: translateY(-100%);
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.show {
+    transform: translateY(0);
+  }
+
+  .sidebar a {
+    text-align: center;
+    padding: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}

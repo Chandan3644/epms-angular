@@ -1,0 +1,31 @@
+<h2 class="board-title">🗂️ Task Board</h2>
+
+<div class="board">
+  <div class="column" *ngFor="let status of statuses">
+    <h3 class="column-title">{{ status }}</h3>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="getList(status)"
+      class="task-list"
+      (cdkDropListDropped)="drop($event, status)"
+    >
+      <div class="task" *ngFor="let task of getList(status)" cdkDrag>
+        <div class="task-header">
+          <h4>{{ task.title }}</h4>
+          <button mat-icon-button (click)="openTaskDialog(task)" color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+        <p>{{ task.description }}</p>
+        <small>📅 Due: {{ task.dueDate | date: 'mediumDate' }}</small>
+        <span class="priority-tag {{ task.priority }}">{{ task.priority }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="actions">
+ <button mat-raised-button color="accent" (click)="openTaskDialog()">➕ Add Task</button>
+
+</div>

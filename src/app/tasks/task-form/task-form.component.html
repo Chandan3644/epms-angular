@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>{{ data ? 'Edit' : 'Create' }} Task</h2>
+
+<form [formGroup]="taskForm" (ngSubmit)="save()" mat-dialog-content>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" placeholder="Task title" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description" rows="3" placeholder="Task description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Due Date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dueDate" placeholder="Select due date" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Priority</mat-label>
+    <mat-select formControlName="priority">
+      <mat-option *ngFor="let level of priorities" [value]="level">{{ level }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option *ngFor="let s of statuses" [value]="s">{{ s }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" (click)="dialogRef.close()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="taskForm.invalid" (click)="save()">
+    {{ data ? 'Update' : 'Create' }}
+  </button>
+</mat-dialog-actions>

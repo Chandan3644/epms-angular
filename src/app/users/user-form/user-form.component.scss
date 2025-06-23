@@ -1,0 +1,54 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  margin-left: 240px; // adjust if your sidebar is fixed width
+  min-height: calc(100vh - 64px); // keeps card vertically centered
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    padding: 16px;
+  }
+}
+
+.user-form-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
+}
