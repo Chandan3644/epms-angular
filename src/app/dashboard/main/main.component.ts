@@ -12,8 +12,6 @@ import { UserService } from 'src/app/users/user.service';
 })
 export class MainComponent {
   userName = 'User';
-  selectedProjectId = 1; 
-
   kpis = {
     totalProjects: 0,
     activeUsers: 0,
@@ -41,7 +39,7 @@ export class MainComponent {
     private projectService: ProjectService,
     private userService: UserService,
     private taskService: TaskService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const user = localStorage.getItem('user');
@@ -51,44 +49,41 @@ export class MainComponent {
     }
     this.loadDashboardData();
   }
+loadDashboardData(): void {
+  this.projectService.getProjects().subscribe(projects => {
+    this.kpis.totalProjects = projects.length;
+  });
 
-  loadDashboardData(): void {
-    // 1. Total projects
-    this.projectService.getProjects().subscribe(projects => {
-      this.kpis.totalProjects = projects.length;
+  this.userService.getUsers().subscribe(users => {
+    this.kpis.activeUsers = users.length;
+  });
+
+  this.taskService.getTasks().subscribe((tasks: Task[]) => {
+    const today = new Date();
+
+    this.kpis.overdueTasks = tasks.filter(t => {
+      const dueDate = new Date(t.dueDate);
+      return dueDate < today && t.status !== 'Done';
+    }).length;
+
+    const statusCount = {
+      'To Do': 0,
+      'In Progress': 0,
+      'Done': 0
+    };
+
+    tasks.forEach(t => {
+      if (statusCount[t.status] !== undefined) {
+        statusCount[t.status]++;
+      }
     });
 
-    // 2. Active users
-    this.userService.getUsers().subscribe(users => {
-      this.kpis.activeUsers = users.filter(u => u.active).length;
-    });
+    this.chartData = [
+      { name: 'To Do', value: statusCount['To Do'] },
+      { name: 'In Progress', value: statusCount['In Progress'] },
+      { name: 'Done', value: statusCount['Done'] }
+    ];
+  });
+}
 
-    // 3. Tasks by selected project
-    this.taskService.getTasksByProject(this.selectedProjectId).subscribe((tasks: Task[]) => {
-      const today = new Date();
-
-      this.kpis.overdueTasks = tasks.filter(t => {
-        const dueDate = new Date(t.dueDate);
-        return dueDate < today && t.status !== 'Done';
-      }).length;
-
-      const statusCount = {
-        'To Do': 0,
-        'In Progress': 0,
-        'Done': 0
-      };
-
-      tasks.forEach(t => {
-        if (statusCount[t.status] !== undefined) {
-          statusCount[t.status]++;
-        }
-      });
-
-      this.chartData = [
-        { name: 'To Do', value: statusCount['To Do'] },
-        { name: 'In Progress', value: statusCount['In Progress'] },
-        { name: 'Done', value: statusCount['Done'] }
-      ];
-    });
-  }
 }

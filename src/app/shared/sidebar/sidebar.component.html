@@ -1,9 +1,0 @@
-<button class="sidebar-toggle" (click)="toggleSidebar()">☰</button>
-
-<nav class="sidebar" [class.show]="sidebarOpen" >
-  <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-  <a *ngIf="userRole === 'Admin'" routerLink="/users" routerLinkActive="active">Users</a>
-   <a routerLink="/logout" (click)="logout()">Logout</a>
-</nav>
-
-

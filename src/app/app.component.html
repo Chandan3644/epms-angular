@@ -1,4 +1,20 @@
-<app-sidebar></app-sidebar>
+<mat-toolbar *ngIf="isLoggedIn" color="primary" class="top-toolbar">
+  <button class="sidebar-toggle" (click)="toggleSidebar()">☰</button>
+  <span class="app-title">EPMS</span>
+  <span class="spacer"></span>
+
+  <button mat-icon-button [routerLink]="['/notifications']" matTooltip="Notifications">
+    <mat-icon>notifications</mat-icon>
+    <span *ngIf="unreadCount > 0" class="notification-badge">{{ unreadCount }}</span>
+  </button>
+
+  <button mat-button color="accent" (click)="logout()">Logout</button>
+</mat-toolbar>
+
+<nav class="sidebar" *ngIf="isLoggedIn" [class.show]="sidebarOpen">
+  <a routerLink="/dashboard" routerLinkActive="active" (click)="toggleSidebar()">Dashboard</a>
+  <a *ngIf="userRole === 'Admin'" routerLink="/users" routerLinkActive="active" (click)="toggleSidebar()">Users</a>
+</nav>
 
 <div class="main-content">
   <router-outlet></router-outlet>

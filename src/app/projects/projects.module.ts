@@ -5,7 +5,8 @@ import { ListComponent } from './list/list.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from '../shared/material.module';
+import { MaterialModule } from '../core/material.module';
+
 
 @NgModule({
   declarations: [ListComponent, FormComponent],

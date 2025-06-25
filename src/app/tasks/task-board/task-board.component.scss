@@ -1,14 +1,7 @@
-:host {
-  display: block;
-  max-width: 100%;
-  overflow-x: hidden; // ✅ Prevent horizontal scrollbar
-  padding: 16px;
-}
-
 .board-title {
   text-align: center;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 400;
   color: #2c3e50;
   margin-bottom: 24px;
 }
@@ -125,7 +118,6 @@
   }
 }
 
-// 🌐 Mobile Responsive Fix
 @media (max-width: 768px) {
   .board {
     flex-direction: column;
@@ -136,17 +128,5 @@
     flex: 1 1 100%;
   }
 }
-:host {
-  display: block;
-  overflow-x: hidden;
-  padding: 16px;
-  margin-left: 220px; // 👈 Desktop sidebar space
-}
 
-// ✅ On mobile, remove the left margin
-@media (max-width: 768px) {
-  :host {
-    margin-left: 0;
-  }
-}
 

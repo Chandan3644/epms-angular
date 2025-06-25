@@ -40,7 +40,6 @@ throw new Error('Method not implemented.');
     if (this.isEditMode) {
       this.userService.getUserById(this.userId).subscribe((user) => {
         this.userForm.patchValue(user);
-        // Password shouldn't be shown for editing (optional)
         this.userForm.get('password')?.setValue('');
       });
     }

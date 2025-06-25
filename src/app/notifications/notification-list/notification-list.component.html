@@ -1,0 +1,15 @@
+<mat-card class="notification-container">
+  <div class="notification-scroll">
+    <mat-card *ngFor="let n of notifications" class="notification-card" [ngClass]="n.type">
+      <div class="notification-message">
+        {{ n.message }}
+      </div>
+      <div class="notification-meta">
+        {{ n.createdAt | date:'short' }}
+        <button mat-icon-button (click)="markRead(n.id)" *ngIf="!n.read">
+          <mat-icon>mark_email_read</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</mat-card>

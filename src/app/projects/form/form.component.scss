@@ -1,6 +1,8 @@
 .form-card {
+  height: 85vh;
+  overflow: auto;
   max-width: 600px;
-  margin: 40px auto;
+  margin: auto;
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

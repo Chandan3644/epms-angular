@@ -31,31 +31,6 @@
   ],
   "projects": [
     {
-      "id": "1",
-      "name": "EPMS Dashboard",
-      "description": "Build the admin dashboard with role-based control",
-      "status": "Active",
-      "managerId": 2
-    },
-    {
-      "id": "c1f6",
-      "name": "a",
-      "description": "a",
-      "status": "Active",
-      "startDate": "2025-06-03T18:30:00.000Z",
-      "endDate": "2025-06-17T18:30:00.000Z",
-      "assignedUsers": []
-    },
-    {
-      "id": "16f8",
-      "name": "aa",
-      "description": "aa",
-      "status": "Active",
-      "startDate": "2025-06-19T18:30:00.000Z",
-      "endDate": "2025-06-27T18:30:00.000Z",
-      "assignedUsers": []
-    },
-    {
       "id": "1b16",
       "name": "aaaa",
       "description": "aa",
@@ -63,49 +38,146 @@
       "startDate": "2025-06-12T18:30:00.000Z",
       "endDate": "2025-06-17T18:30:00.000Z",
       "assignedUsers": []
+    },
+    {
+      "id": "c300",
+      "name": "sd",
+      "description": "ddd",
+      "status": "On Hold",
+      "startDate": "2025-06-29T18:30:00.000Z",
+      "endDate": "2025-05-31T18:30:00.000Z",
+      "assignedUsers": []
+    },
+    {
+      "id": "3",
+      "name": "akhil",
+      "description": "asd",
+      "status": "Active",
+      "startDate": "2025-06-11T18:30:00.000Z",
+      "endDate": "2025-06-22T18:30:00.000Z",
+      "assignedUsers": []
+    },
+    {
+      "id": "9424",
+      "name": "1",
+      "description": "1",
+      "status": "Completed",
+      "startDate": "2025-06-10T18:30:00.000Z",
+      "endDate": "2025-06-10T18:30:00.000Z",
+      "assignedUsers": []
     }
   ],
- "tasks": [
-  {
-    "id": 1,
-    "title": "Set up login system",
-    "description": "Implement role-based authentication and guards",
-    "status": "Done",
-    "assigneeId": 3,
-    "projectId": 1,
-    "dueDate": "2025-06-10T00:00:00.000Z",
-    "priority": "High"
-  },
-  {
-    "id": 2,
-    "title": "Create dashboard UI",
-    "description": "Design and develop the dashboard components",
-    "status": "In Progress",
-    "assigneeId": 3,
-    "projectId": 1,
-    "dueDate": "2025-06-25T00:00:00.000Z",
-    "priority": "Medium"
-  },
-  {
-    "id": 3,
-    "title": "Fix overdue task issue",
-    "description": "Resolve date calculation bug in task view",
-    "status": "To Do",
-    "assigneeId": 3,
-    "projectId": 1,
-    "dueDate": "2025-07-01T00:00:00.000Z",
-    "priority": "Low"
-  },
-  {
-    "id": 4,
-    "title": "New feature planning",
-    "description": "Plan sprint backlog",
-    "status": "To Do",
-    "assigneeId": 2,
-    "projectId": 2,
-    "dueDate": "2025-06-30T00:00:00.000Z",
-    "priority": "Medium"
-  }
-]
-
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Set up login system",
+      "description": "Implement role-based authentication and guards",
+      "status": "Done",
+      "assigneeId": 3,
+      "projectId": 1,
+      "dueDate": "2025-06-10T00:00:00.000Z",
+      "priority": "High"
+    },
+    {
+      "id": "1",
+      "title": "Create dashboard UI",
+      "description": "Design and develop the dashboard components",
+      "status": "In Progress",
+      "assigneeId": 3,
+      "projectId": 1,
+      "dueDate": "2025-06-25T00:00:00.000Z",
+      "priority": "Medium"
+    },
+    {
+      "id": "1",
+      "title": "Fix overdue task issue",
+      "description": "Resolve date calculation bug in task view",
+      "status": "To Do",
+      "assigneeId": 3,
+      "projectId": 1,
+      "dueDate": "2025-07-01T00:00:00.000Z",
+      "priority": "Low"
+    },
+    {
+      "id": "4",
+      "title": "New feature planning",
+      "description": "Plan sprint backlog",
+      "status": "To Do",
+      "assigneeId": 2,
+      "projectId": 2,
+      "dueDate": "2025-06-30T00:00:00.000Z",
+      "priority": "Medium"
+    },
+    {
+      "id": "a530",
+      "projectId": 0,
+      "title": "as",
+      "description": "dffr",
+      "dueDate": "2025-06-18T18:30:00.000Z",
+      "priority": "Low",
+      "status": "Done"
+    },
+    {
+      "id": "071b",
+      "projectId": 0,
+      "title": "aa",
+      "description": "hh",
+      "dueDate": "2025-06-22T18:30:00.000Z",
+      "priority": "High",
+      "status": "In Progress"
+    },
+    {
+      "id": "1",
+      "projectId": 0,
+      "title": "jjj",
+      "description": "dfghjk",
+      "dueDate": "2025-06-22T18:30:00.000Z",
+      "priority": "Low",
+      "status": "To Do"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "message": "New project 'Website Redesign' has been created.",
+      "type": "info",
+      "createdAt": "2025-06-24T10:00:00.000Z",
+      "read": true
+    },
+    {
+      "id": "2",
+      "message": "Task 'Landing Page UI' has been assigned to you.",
+      "type": "success",
+      "createdAt": "2025-06-25T12:30:00.000Z",
+      "read": true
+    },
+    {
+      "id": "3",
+      "message": "Reminder: Project 'ERP System' is due next week.",
+      "type": "warning",
+      "createdAt": "2025-06-26T08:15:00.000Z",
+      "read": false
+    },
+    {
+      "id": "4",
+      "message": "Error syncing tasks from remote server.",
+      "type": "error",
+      "createdAt": "2025-06-26T09:00:00.000Z",
+      "read": false
+    },
+    {
+      "id": "5",
+      "message": "User 'John Doe' has joined the project team.",
+      "type": "info",
+      "createdAt": "2025-06-25T15:45:00.000Z",
+      "read": true
+    },
+    {
+      "id": "6",
+      "message": "You have been mentioned in a comment.",
+      "type": "success",
+      "createdAt": "2025-06-26T10:25:00.000Z",
+      "read": false
+    }
+  ]
 }

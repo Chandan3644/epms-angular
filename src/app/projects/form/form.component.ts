@@ -32,7 +32,6 @@ export class FormComponent implements OnInit {
   this.projectId = +this.route.snapshot.paramMap.get('id')!;
   if (this.projectId) {
     this.projectService.getProjectById(this.projectId).subscribe(project => {
-      // Patch with a new object, don't modify original
       this.projectForm.patchValue({
         ...project,
         startDate: project.startDate ? new Date(project.startDate) : null,

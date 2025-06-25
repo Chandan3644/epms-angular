@@ -27,4 +27,5 @@ export class ListComponent implements OnInit {
       this.projectService.deleteProject(id).subscribe(() => this.loadProjects());
     }
   }
+  
 }

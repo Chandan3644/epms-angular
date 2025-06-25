@@ -5,7 +5,8 @@ import { TaskBoardComponent } from './task-board/task-board.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '../shared/material.module';
+import { MaterialModule } from '../core/material.module';
+
 
 
 @NgModule({

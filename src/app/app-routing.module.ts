@@ -36,7 +36,14 @@ data: { roles: ['Admin'] },
   canActivate: [AuthGuard, RoleGuard],
   data: { roles: ['Admin'] },
   loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+},
+{
+  path: 'notifications',
+  canActivate: [AuthGuard, RoleGuard],
+  data: { roles: ['Admin', 'ProjectManager'] },
+  loadChildren: () => import('./notifications/notification.module').then(m => m.NotificationModule)
 }
+
 ,  
   { path: '**', redirectTo: 'auth' }
 ];

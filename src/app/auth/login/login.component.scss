@@ -2,12 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 0; // No extra spacing causing overflow
-  margin: 0;
-  background-color: #fff; // White background for clean look
-  overflow: hidden; // Hides scroll completely
+  min-height: 100vh;  
+  padding: 0;  
+  margin: 0; 
+  box-sizing: border-box;
+  
 }
+
+
+
 
 .login-card {
   width: 100%;
